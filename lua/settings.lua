@@ -9,12 +9,18 @@ local options = {
     background = "light",
     completeopt = {'menuone', 'noselect', 'noinsert'},
     shortmess = vim.opt.shortmess + {c = true},
-	updatetime = 300
+    updatetime = 300,
+    splitright = true,
+    splitbelow = true
 }
 
-for k, v in pairs(options) do
-  vim.opt[k] = v
-end
+for k, v in pairs(options) do vim.opt[k] = v end
+
+vim.g["floaterm_wintype"] = "split"
+vim.g["floaterm_height"] = 0.3
+vim.g["floaterm_title"] = '$1/$2'
+-- vim.g["floaterm_autohide"] = 0
+vim.g["floaterm_autoclose"] = 0
 -- Set completeopt to have a better completion experience
 -- :help completeopt
 -- menuone: popup even when there's only one match
